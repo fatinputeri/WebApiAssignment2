@@ -1,0 +1,43 @@
+<div class="main">
+  <h2 class="center aligned header">N e e d  S o m e  M u s i c ?</h2>
+  <div class="sub header">Search for your favourite artist down below!</div>
+  <div class="ui form">
+    <br>
+    <!-- search punya tmpt -->
+    <div class="ui icon fluid input">
+      <input type="text"  [formControl]="query" placeholder="Search Songs...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div> 
+<!-- search result -->
+<div class="result" *ngIf="results">
+  <div class="ui scheme raised segments" *ngFor="let resu of results">
+    <div class="ui segment">
+      <div class="ui items" *ngIf="resu.images.length > 0">
+        <div class="item">
+          <div class="ui small image">
+            <img src="{{resu.images[0].url}}" alt="">
+          </div>
+
+          <div class="content">
+            <h3><a href="/artist/{{resu.id}}">{{resu.name}}</a></h3>
+            <div class="ui labels">
+              <div class="ui blue label">Followers: {{resu.followers.total}}</div>
+              <div class="ui green label">Popularity: {{resu.popularity}}</div>
+            </div>
+            <div class="ui horizontal list" *ngFor="let genre of resu.genres">
+              <div class="item">
+                <div class="ui labels">
+                  <div class="ui label">{{genre}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: url(/assets/public/images/spotify-banner.jpg) center center fixed no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.main {
+  color: #fff;
+}
+
+.result{
+  color:black;
+}
+
+.scheme{
+  color: #669CAD;
+}
+
+.scheme-button{
+  background-color: #669CAD !important;
+}
+
+.main{
+  text-align: center;
+}
+
+
